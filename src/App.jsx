@@ -72,22 +72,24 @@ export default function ValentineProposal() {
       {/* Intro Stage */}
       {stage === 'intro' && (
         <div className="relative z-10 flex items-center justify-center min-h-screen px-4">
-          <div className="text-center space-y-8 animate-fade-in max-w-3xl w-full">
+          <div className="text-center space-y-6 md:space-y-8 animate-fade-in max-w-3xl w-full">
             <div className="relative">
-              <h1 className="text-7xl font-bold bg-gradient-to-r from-pink-500 via-red-500 to-pink-500 bg-clip-text text-transparent animate-pulse-slow">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-pink-500 via-red-500 to-pink-500 bg-clip-text text-transparent animate-pulse-slow px-4">
                 Hey Baby 💕
               </h1>
-              <p className="text-2xl text-pink-600 font-semibold mt-4">(Yes, you Hiba! 😘)</p>
-              <Sparkles className="absolute -top-6 -right-6 text-yellow-400 w-12 h-12 animate-spin-slow" />
+              <p className="text-lg sm:text-xl md:text-2xl text-pink-600 font-semibold mt-3 md:mt-4">
+                (Yes, you Babygirl! 😘)
+              </p>
+              <Sparkles className="absolute -top-4 -right-2 sm:-top-6 sm:-right-6 text-yellow-400 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 animate-spin-slow" />
               <Sparkles
-                className="absolute -bottom-6 -left-6 text-yellow-400 w-10 h-10 animate-spin-slow"
+                className="absolute -bottom-4 -left-2 sm:-bottom-6 sm:-left-6 text-yellow-400 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 animate-spin-slow"
                 style={{ animationDelay: '1s' }}
               />
             </div>
 
             <button
               onClick={() => setStage('question')}
-              className="group relative px-12 py-6 bg-gradient-to-r from-pink-500 to-red-500 text-white text-2xl font-bold rounded-full shadow-2xl hover:shadow-pink-300 hover:scale-110 transition-all duration-300 overflow-hidden"
+              className="group relative px-8 py-4 sm:px-10 sm:py-5 md:px-12 md:py-6 bg-gradient-to-r from-pink-500 to-red-500 text-white text-lg sm:text-xl md:text-2xl font-bold rounded-full shadow-2xl hover:shadow-pink-300 hover:scale-110 transition-all duration-300 overflow-hidden"
             >
               <span className="relative z-10">Press This! 💖</span>
               <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -99,15 +101,17 @@ export default function ValentineProposal() {
       {/* Question Stage */}
       {stage === 'question' && (
         <div className="relative z-10 flex items-center justify-center min-h-screen p-4">
-          <div className="text-center space-y-12 animate-scale-in max-w-5xl w-full">
-            <div className="space-y-4">
-              <Heart className="w-24 h-24 mx-auto text-red-500 animate-heartbeat fill-red-500" />
-              <h2 className="text-6xl font-bold bg-gradient-to-r from-pink-600 via-red-600 to-pink-600 bg-clip-text text-transparent leading-tight">
+          <div className="text-center space-y-8 md:space-y-12 animate-scale-in max-w-5xl w-full">
+            <div className="space-y-3 md:space-y-4">
+              <Heart className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto text-red-500 animate-heartbeat fill-red-500" />
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-pink-600 via-red-600 to-pink-600 bg-clip-text text-transparent leading-tight px-4">
                 Will You Be My
                 <br />
-                <span className="text-7xl">Valentine? 💝</span>
+                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Valentine? 💝</span>
               </h2>
-              <p className="text-3xl text-pink-600 font-semibold mt-4">Hiba, my love 💕</p>
+              <p className="text-xl sm:text-2xl md:text-3xl text-pink-600 font-semibold mt-3 md:mt-4">
+                my love 💕
+              </p>
               {attempts > 0 && (
                 <p className="text-pink-600 text-xl font-semibold animate-bounce text-center mt-4">
                   {attempts === 1 && 'Come on baby… 🥺'}
@@ -116,7 +120,7 @@ export default function ValentineProposal() {
                   {attempts === 4 && 'I love you sooo much 💗'}
                   {attempts === 5 && 'Don’t break my heart !!'}
                   {attempts === 6 && 'I’m begging now 😭❤️'}
-                  {attempts === 7 && '3afak a hiba 😩💖'}
+                  {attempts === 7 && '3afa 😩💖'}
                   {attempts === 8 && 'layhdik goli yes 😩💖'}
                   {attempts === 9 && 'Just press YES already 😭💕'}
                   {attempts === 10 && 'I’ll be the best Valentine ever 😘🌹'}
@@ -127,12 +131,13 @@ export default function ValentineProposal() {
               )}
             </div>
 
-            <div className="relative h-96 w-full">
+            <div className="relative h-64 sm:h-80 md:h-96 w-full">
               {/* No Button - Moving position (rendered first, lower z-index) */}
               <button
                 onMouseEnter={moveNoButton}
+                onTouchStart={moveNoButton}
                 onClick={moveNoButton}
-                className="absolute px-12 py-4 bg-gradient-to-r from-gray-400 to-gray-500 text-white text-2xl font-bold rounded-full shadow-xl transition-all duration-200 hover:scale-95 z-10"
+                className="absolute px-6 py-3 sm:px-10 sm:py-3 md:px-12 md:py-4 bg-gradient-to-r from-gray-400 to-gray-500 text-white text-lg sm:text-xl md:text-2xl font-bold rounded-full shadow-xl transition-all duration-200 hover:scale-95 z-10"
                 style={{
                   top: noButtonPosition.top,
                   left: noButtonPosition.left,
@@ -145,8 +150,8 @@ export default function ValentineProposal() {
               {/* Yes Button - Fixed position (rendered second, higher z-index) */}
               <button
                 onClick={handleYes}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-16 py-6 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-3xl font-bold rounded-full shadow-2xl hover:shadow-green-300 hover:scale-110 transition-all duration-300 z-30"
-                style={{ marginLeft: '-120px' }}
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-10 py-4 sm:px-12 sm:py-5 md:px-16 md:py-6 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-xl sm:text-2xl md:text-3xl font-bold rounded-full shadow-2xl hover:shadow-green-300 hover:scale-110 transition-all duration-300 z-30"
+                style={{ marginLeft: '0' }}
               >
                 Yes! 💚
               </button>
@@ -158,7 +163,7 @@ export default function ValentineProposal() {
       {/* Accepted Stage */}
       {stage === 'accepted' && (
         <div className="relative z-10 flex items-center justify-center min-h-screen p-4">
-          <div className="text-center space-y-8 animate-scale-in">
+          <div className="text-center space-y-6 md:space-y-8 animate-scale-in w-full">
             {/* Celebration hearts */}
             {[...Array(30)].map((_, i) => (
               <Heart
@@ -175,44 +180,48 @@ export default function ValentineProposal() {
               />
             ))}
 
-            <div className="relative bg-white/90 backdrop-blur-sm p-12 rounded-3xl shadow-2xl max-w-2xl mx-auto border-4 border-pink-200">
-              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
-                <div className="bg-gradient-to-r from-pink-500 to-red-500 text-white px-8 py-3 rounded-full text-2xl font-bold shadow-lg">
+            <div className="relative bg-white/90 backdrop-blur-sm p-6 sm:p-8 md:p-12 rounded-2xl md:rounded-3xl shadow-2xl max-w-sm sm:max-w-lg md:max-w-2xl mx-auto border-2 sm:border-4 border-pink-200">
+              <div className="absolute -top-6 sm:-top-8 left-1/2 transform -translate-x-1/2 w-[90%] sm:w-auto">
+                <div className="bg-gradient-to-r from-pink-500 to-red-500 text-white px-4 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 rounded-full text-base sm:text-xl md:text-2xl font-bold shadow-lg">
                   🎉 She Said Yes! 🎉
                 </div>
               </div>
 
-              <div className="mt-8 space-y-6">
-                <div className="text-8xl animate-bounce-slow">💐🌹💝🌹💐</div>
+              <div className="mt-6 sm:mt-8 space-y-4 sm:space-y-5 md:space-y-6">
+                <div className="text-4xl sm:text-6xl md:text-8xl animate-bounce-slow">
+                  💐🌹💝🌹💐
+                </div>
 
-                <h3 className="text-5xl font-bold bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent leading-tight px-2">
                   You Made Me The
                   <br />
                   Happiest Person!
                 </h3>
 
-                <div className="space-y-4 text-gray-700">
-                  <p className="text-2xl font-semibold leading-relaxed">
+                <div className="space-y-3 sm:space-y-4 text-gray-700 px-2">
+                  <p className="text-lg sm:text-xl md:text-2xl font-semibold leading-relaxed">
                     Every moment with you feels like magic ✨
                   </p>
-                  <p className="text-xl leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
                     You light up my world in ways I never imagined possible.
-                    <br />
+                    <br className="hidden sm:block" />
+                    <span className="sm:hidden"> </span>
                     Your smile, your laugh, your love... everything about you
-                    <br />
+                    <br className="hidden sm:block" />
+                    <span className="sm:hidden"> </span>
                     makes every day feel like Valentine's Day. 💕
                   </p>
-                  <p className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent mt-6">
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent mt-4 sm:mt-6">
                     I love you more than words can say! 💖
                   </p>
                 </div>
 
-                <div className="flex gap-4 justify-center text-6xl animate-pulse-slow">
+                <div className="flex gap-2 sm:gap-3 md:gap-4 justify-center text-3xl sm:text-5xl md:text-6xl animate-pulse-slow">
                   🌸 🌺 🌷 🌹 💐
                 </div>
 
-                <div className="pt-4">
-                  <p className="text-sm text-gray-500 italic">
+                <div className="pt-3 sm:pt-4">
+                  <p className="text-xs sm:text-sm text-gray-500 italic">
                     Forever yours, always and forever 💑
                   </p>
                 </div>
@@ -222,7 +231,7 @@ export default function ValentineProposal() {
         </div>
       )}
 
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%,
           100% {
